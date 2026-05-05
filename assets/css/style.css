@@ -305,27 +305,27 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   margin: 0 auto;
   z-index: 1;
 }
-.section__head { margin-bottom: 64px; }
+.section__head { margin-bottom: 44px; }
 .kicker {
   display: inline-block;
   font-size: 11px; letter-spacing: .4em; text-transform: uppercase;
   color: var(--gold-2); margin-bottom: 16px;
 }
 .section__head h2 {
-  font-family: "Cormorant Garamond", "Noto Sans Georgian", serif;
-  font-size: clamp(36px, 5vw, 64px);
-  font-weight: 500;
-  letter-spacing: -.01em;
+  font-family: "Noto Sans Georgian", "Cormorant Garamond", serif;
+  font-size: clamp(26px, 3.4vw, 42px);
+  font-weight: 600;
+  letter-spacing: -.005em;
 }
 .section__sub { color: var(--ink-soft); margin-top: 14px; max-width: 600px; }
 
 /* ABOUT */
 .about { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
 .about__lead {
-  font-family: "Cormorant Garamond", "Noto Sans Georgian", serif;
-  font-size: 26px; line-height: 1.45;
+  font-family: "Noto Sans Georgian", "Cormorant Garamond", serif;
+  font-size: 18px; line-height: 1.55;
   color: var(--ink);
-  font-weight: 400;
+  font-weight: 500;
 }
 .about__body { color: var(--ink-soft); font-size: 16px; }
 .stats {
@@ -343,7 +343,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .stat__num {
   display: block;
   font-family: "Cormorant Garamond", serif;
-  font-size: 56px; font-weight: 500;
+  font-size: 38px; font-weight: 500;
   color: var(--gold-1);
   line-height: 1;
 }
@@ -453,10 +453,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   margin-bottom: 10px;
 }
 .project__title {
-  font-family: "Cormorant Garamond", "Noto Sans Georgian", serif;
-  font-size: 26px; font-weight: 500;
+  font-family: "Noto Sans Georgian", "Cormorant Garamond", serif;
+  font-size: 20px; font-weight: 600;
   margin-bottom: 10px;
   color: var(--ink);
+  letter-spacing: -.005em;
 }
 .project__desc { color: var(--ink-soft); font-size: 14px; flex: 1; }
 .project__stack {
@@ -514,9 +515,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--gold-2); margin-bottom: 6px;
 }
 .tl-item__role {
-  font-family: "Cormorant Garamond", "Noto Sans Georgian", serif;
-  font-size: 22px; font-weight: 500;
+  font-family: "Noto Sans Georgian", "Cormorant Garamond", serif;
+  font-size: 17px; font-weight: 600;
   color: var(--ink);
+  letter-spacing: -.003em;
 }
 .tl-item__company { color: var(--ink-soft); font-size: 14px; margin-bottom: 12px; }
 .tl-item ul { padding-left: 18px; color: var(--ink-soft); font-size: 14px; }
@@ -585,7 +587,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .section { padding: 80px 22px; }
   .about { grid-template-columns: 1fr; gap: 24px; }
   .stats { grid-template-columns: repeat(2, 1fr); padding: 22px; }
-  .stat__num { font-size: 42px; }
+  .stat__num { font-size: 30px; }
   .footer { padding: 24px 22px; flex-direction: column; gap: 10px; }
 }
 @media (max-width: 560px) {
