@@ -305,7 +305,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   margin: 0 auto;
   z-index: 1;
 }
-.section__head { margin-bottom: 56px; }
+.section__head { margin-bottom: 40px; }
 .kicker {
   display: inline-block;
   font-size: 11px; letter-spacing: .4em; text-transform: uppercase;
@@ -313,9 +313,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .section__head h2 {
   font-family: "Cormorant Garamond", "Noto Sans Georgian", serif;
-  font-size: clamp(30px, 4.2vw, 52px);
+  font-size: clamp(22px, 2.6vw, 32px);
   font-weight: 500;
-  letter-spacing: -.01em;
+  letter-spacing: -.005em;
 }
 .section__sub { color: var(--ink-soft); margin-top: 14px; max-width: 600px; }
 
