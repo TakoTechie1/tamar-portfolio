@@ -2,7 +2,7 @@
    DATA LAYER — localStorage-backed CMS for portfolio content
    ============================================================ */
 (function () {
-  const KEY = "tk_portfolio_v1";
+  const KEY = "tk_portfolio_v2";
 
   const DEFAULTS = {
     profile: {
@@ -10,7 +10,7 @@
       lead:
         "AI-ზე ორიენტირებული სპეციალისტი პრაქტიკული გამოცდილებით AI ინსტრუმენტების გამოყენებაში, vibe coding-ში, n8n ავტომატიზაციებსა და ციფრულ მარქეტინგში.",
       body:
-        "ვქმნი AI-powered აპებს, ვავტომატიზებ სამუშაო პროცესებს და ვმართავ კონტენტ სტრატეგიას. AI PULSE GEORGIA-ს ფარგლებში ყოველდღიურ AI სიახლეებს ვაწვდი ქართველ აუდიტორიას.",
+        "ვქმნი AI-powered აპებს, ვავტომატიზებ სამუშაო პროცესებს და ვმართავ კონტენტ სტრატეგიას. ყოველდღიურ AI სიახლეებს ვაწვდი ქართველ აუდიტორიას.",
       email: "khatiashvilitamar35@gmail.com",
       phone: "+995 592 12 16 52",
       city: "თბილისი",
@@ -36,17 +36,6 @@
         repo: "https://github.com/TakoTechie1/kokrochina-app",
         live: "",
         emoji: "✦"
-      },
-      {
-        id: "wolff-system",
-        tag: "Brand · Identity",
-        title: "Wolff System",
-        description:
-          "თბილისის სოლარიუმის ბრენდის სრული საიდენტიფიკაციო სისტემა — ლოგო, ტიპოგრაფია (Segoe UI), ფერთა პალიტრა და ბრენდ-აქტივები.",
-        stack: ["Brand Identity", "Logo", "Typography"],
-        repo: "",
-        live: "",
-        emoji: "W"
       },
       {
         id: "ai-pulse",
