@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin · Tamar Khatiashvili</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' fill='%23d4af37'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="bg-orbs" aria-hidden="true">
+  <div class="orb orb--1"></div>
+  <div class="orb orb--2"></div>
+</div>
+
+<!-- LOGIN VIEW -->
+<section class="login" id="loginView">
+  <form class="login__card" id="loginForm" autocomplete="off">
+    <span class="nav__brand-mark">T<em>·</em>K</span>
+    <h1>Admin Panel</h1>
+    <p>შეიყვანე პაროლი ადმინისტრაციისთვის</p>
+    <div class="field">
+      <label>Password</label>
+      <input type="password" id="loginPass" required autofocus />
+    </div>
+    <button type="submit" class="btn btn--gold" style="width:100%;margin-top:6px">შესვლა</button>
+    <p class="login__hint" id="loginHint">ნაგულისხმევი პაროლი: <b style="color:var(--gold-1)">tamar2026</b> · შეცვალე Settings-ში</p>
+  </form>
+</section>
+
+<!-- DASHBOARD VIEW -->
+<section class="admin" id="dashView" style="display:none">
+  <aside class="admin__side">
+    <div class="admin__brand">
+      <span class="nav__brand-mark">T<em>·</em>K</span>
+      <b>ADMIN</b>
+    </div>
+    <nav class="admin__nav" id="adminNav">
+      <button data-tab="overview" class="is-active">📊 Overview</button>
+      <button data-tab="profile">👤 პროფილი</button>
+      <button data-tab="projects">🚀 პროექტები</button>
+      <button data-tab="experience">💼 გამოცდილება</button>
+      <button data-tab="skills">⚡ სქილები</button>
+      <button data-tab="settings">⚙ პარამეტრები</button>
+      <button id="logoutBtn" style="margin-top:auto;color:#ff8888">⎋ გასვლა</button>
+    </nav>
+  </aside>
+
+  <main class="admin__main">
+    <header class="admin__head">
+      <h1 id="panelTitle">Overview</h1>
+      <a class="admin__user" href="index.html" target="_blank">↗ View Site</a>
+    </header>
+
+    <!-- OVERVIEW -->
+    <div class="panel is-active" id="panel-overview">
+      <div class="tile-grid">
+        <div class="tile"><small>პროექტები</small><h3 id="cntProjects">0</h3><p>აქტიური ჩანაწერი</p></div>
+        <div class="tile"><small>გამოცდილება</small><h3 id="cntExp">0</h3><p>კარიერული ჩანაწერი</p></div>
+        <div class="tile"><small>სქილი</small><h3 id="cntSkills">0</h3><p>ლისტირებული ხელსაწყო</p></div>
+        <div class="tile"><small>სტატუსი</small><h3 style="color:var(--gold-1)">LIVE</h3><p>კონტენტი სინქრონია</p></div>
+      </div>
+      <div class="admin-card">
+        <h2>კეთილი იყოს თქვენი მობრძანება, თამარ ✦</h2>
+        <p>აქედან მართავ შენი პორტფოლიოს კონტენტს. ცვლილება მყისიერად აისახება საიტზე.</p>
+        <div class="form-actions">
+          <a href="index.html" target="_blank" class="btn btn--gold btn--sm">საიტის ნახვა</a>
+          <button class="btn btn--ghost btn--sm" id="exportBtn">JSON ექსპორტი</button>
+          <label class="btn btn--ghost btn--sm" style="cursor:pointer">
+            JSON იმპორტი
+            <input type="file" id="importFile" accept="application/json" hidden />
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFILE -->
+    <div class="panel" id="panel-profile">
+      <div class="admin-card">
+        <h2>პროფილის ინფორმაცია</h2>
+        <p>ეს ტექსტი ჩნდება საიტის Hero და About სექციებში.</p>
+        <form id="profileForm">
+          <div class="form-grid">
+            <div class="field"><label>Tagline</label><input name="tagline" /></div>
+            <div class="field"><label>Email</label><input name="email" type="email" /></div>
+            <div class="field"><label>Phone</label><input name="phone" /></div>
+            <div class="field"><label>City</label><input name="city" /></div>
+            <div class="field field--full"><label>GitHub URL</label><input name="github" /></div>
+            <div class="field field--full"><label>Lead (მოკლე ზედსართავი)</label><textarea name="lead"></textarea></div>
+            <div class="field field--full"><label>Body (აღწერა)</label><textarea name="body"></textarea></div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn--gold btn--sm">შენახვა</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="panel" id="panel-projects">
+      <div class="admin-card">
+        <h2 id="projFormTitle">პროექტის დამატება</h2>
+        <p>დაამატე GitHub პროექტი, ბრენდის სამუშაო ან ნებისმიერი keys.</p>
+        <form id="projectForm">
+          <input type="hidden" name="id" />
+          <div class="form-grid">
+            <div class="field"><label>სათაური</label><input name="title" required /></div>
+            <div class="field"><label>თეგი (მაგ. Mobile · React Native)</label><input name="tag" /></div>
+            <div class="field field--full"><label>აღწერა</label><textarea name="description"></textarea></div>
+            <div class="field"><label>GitHub URL</label><input name="repo" type="url" /></div>
+            <div class="field"><label>Live URL</label><input name="live" type="url" /></div>
+            <div class="field"><label>Stack (მძიმით გამოყოფილი)</label><input name="stack" placeholder="React, TypeScript, AI" /></div>
+            <div class="field"><label>ემოჯი / ნიშანი</label><input name="emoji" maxlength="3" placeholder="✦" /></div>
+            <div class="field field--full"><label>სურათის URL ან ატვირთვა</label>
+              <input name="image" placeholder="https://... ან დატოვე ცარიელი" />
+              <input type="file" id="projImageUpload" accept="image/*" style="margin-top:8px" />
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn--gold btn--sm">შენახვა</button>
+            <button type="button" class="btn btn--ghost btn--sm" id="projResetBtn">გაუქმება</button>
+          </div>
+        </form>
+      </div>
+      <div class="admin-card">
+        <h2>არსებული პროექტები</h2>
+        <div class="admin-list" id="projectList"></div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="panel" id="panel-experience">
+      <div class="admin-card">
+        <h2 id="expFormTitle">გამოცდილების დამატება</h2>
+        <p>კარიერული ჩანაწერი ჩნდება Experience timeline-ში.</p>
+        <form id="experienceForm">
+          <input type="hidden" name="index" />
+          <div class="form-grid">
+            <div class="field"><label>პერიოდი</label><input name="period" placeholder="2024 – დღემდე" required /></div>
+            <div class="field"><label>როლი</label><input name="role" required /></div>
+            <div class="field field--full"><label>კომპანია</label><input name="company" /></div>
+            <div class="field field--full"><label>ბულეტები (თითო ხაზი)</label><textarea name="bullets" rows="5"></textarea></div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn--gold btn--sm">შენახვა</button>
+            <button type="button" class="btn btn--ghost btn--sm" id="expResetBtn">გაუქმება</button>
+          </div>
+        </form>
+      </div>
+      <div class="admin-card">
+        <h2>კარიერული ისტორია</h2>
+        <div class="admin-list" id="experienceList"></div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="panel" id="panel-skills">
+      <div class="admin-card">
+        <h2>სქილის დამატება</h2>
+        <p>ერთი ხელსაწყო თითო ხაზზე ან ღილაკით ცალ-ცალკე.</p>
+        <form id="skillForm">
+          <div class="field"><label>ახალი სქილი</label><input name="skill" required /></div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn--gold btn--sm">დამატება</button>
+          </div>
+        </form>
+      </div>
+      <div class="admin-card">
+        <h2>ბევრი ერთად (bulk)</h2>
+        <form id="skillBulkForm">
+          <div class="field field--full"><label>თითო სქილი ცალ-ცალკე ხაზზე</label><textarea name="bulk" rows="6"></textarea></div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn--gold btn--sm">ჩანაცვლება</button>
+          </div>
+        </form>
+      </div>
+      <div class="admin-card">
+        <h2>აქტიური სქილები</h2>
+        <div class="admin-list" id="skillList"></div>
+      </div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div class="panel" id="panel-settings">
+      <div class="admin-card">
+        <h2>ადმინ პაროლი</h2>
+        <p>შეცვალე პაროლი (ინახება მხოლოდ ბრაუზერში localStorage-ში).</p>
+        <form id="passwordForm">
+          <div class="form-grid">
+            <div class="field"><label>ახალი პაროლი</label><input name="pass" type="password" required minlength="4" /></div>
+            <div class="field"><label>გაიმეორე</label><input name="pass2" type="password" required minlength="4" /></div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn--gold btn--sm">პაროლის შეცვლა</button>
+          </div>
+        </form>
+      </div>
+      <div class="admin-card">
+        <h2>კონტენტის გადატვირთვა</h2>
+        <p>ყველა ცვლილება დაბრუნდება ნაგულისხმევ მნიშვნელობებზე. შეუქცევადი მოქმედება.</p>
+        <div class="form-actions">
+          <button class="btn btn--danger btn--sm" id="resetBtn">ნაგულისხმევზე დაბრუნება</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</section>
+
+<div class="toast" id="toast"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>
