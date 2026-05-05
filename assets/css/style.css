@@ -157,11 +157,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   background: linear-gradient(90deg, transparent, var(--gold-2));
 }
 .hero__title {
-  font-family: "Cormorant Garamond", "Noto Sans Georgian", serif;
-  font-size: clamp(56px, 9vw, 132px);
-  line-height: .95;
-  font-weight: 500;
-  letter-spacing: -.02em;
+  font-family: "Noto Sans Georgian", "Cormorant Garamond", serif;
+  font-size: clamp(40px, 5.5vw, 76px);
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -.01em;
 }
 .hero__title .line {
   display: block;
